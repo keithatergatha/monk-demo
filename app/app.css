@@ -350,6 +350,15 @@
   .mk-rail-foot{align-items:center}
   .mk-main{padding:var(--space-5) var(--space-6) var(--space-7)}
 }
+.mk-foot .mk-btn{max-width:100%;min-width:0}
+@media (max-width:380px){.mk-foot{flex-wrap:wrap;row-gap:10px}.mk-foot>.mk-meta{flex-basis:100%}.mk-btn.is-lg{white-space:normal;text-align:center;height:auto;min-height:48px;line-height:1.25;padding-top:10px;padding-bottom:10px}}
+@media (max-height:520px){
+  .mk-rail{padding-top:8px;padding-bottom:8px;gap:6px}
+  .mk-rail .mk-wordmark{font-size:16px}
+  .mk-nav.is-groups{gap:0}
+  .mk-nav.is-groups .mk-nav-i{padding:2px 0;gap:2px}
+  .mk-nav.is-groups .mk-nav-a{height:32px;font-size:20px}
+}
 @container mk (min-width:1100px){
   .mk-shell{grid-template-columns:var(--rail) minmax(0,1fr)}
   .mk-rail{align-items:stretch;padding:var(--space-5) var(--space-4)}
@@ -609,14 +618,15 @@ textarea.mk-input{display:block;min-height:180px;max-width:560px;resize:vertical
   .mk *,.mk *::before,.mk *::after{transition-duration:.01ms !important;animation:none !important}
 }
 html,body{height:100%;margin:0}
+html,body{overflow:hidden;overscroll-behavior:none;-webkit-text-size-adjust:100%;text-size-adjust:100%}
 body{background:var(--ground);color:var(--ink)}
 [hidden]{display:none!important}
-#app{position:relative;height:100%;overflow:hidden}
+#app{position:fixed;inset:0;height:auto;overflow:hidden;overflow:clip;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-left:env(safe-area-inset-left,0px);padding-right:env(safe-area-inset-right,0px)}
 #app{--font-hand:"Playwrite DE Grund","Source Serif 4",Georgia,serif}
 .mk-shell{--gut:var(--space-4)}
-.mk-main{position:relative;scroll-behavior:auto}
+.mk-main{position:relative;scroll-behavior:auto;overscroll-behavior:contain;-webkit-overflow-scrolling:touch;overflow-x:hidden}
 .mk-place{min-width:0}
-.mk-tabbar{padding-bottom:6px}            
+.mk-tabbar{padding-bottom:calc(6px + env(safe-area-inset-bottom,0px))}   
 .mk-top .mk-wordmark{font-size:24px}
 .mk-logo{display:inline-flex;align-items:baseline;gap:.32em;margin:0;padding:0;border:0;background:none;color:inherit;font:inherit;font-variation-settings:inherit;letter-spacing:inherit;line-height:inherit;cursor:pointer;border-radius:6px;touch-action:manipulation}
 svg.mk-mark{display:block;flex:none;height:1.04em;width:auto;overflow:visible;border-radius:0;box-shadow:none;transition:transform var(--dur-base) var(--spring)}
@@ -979,7 +989,7 @@ html.is-theming,html.is-theming *{transition:background-color 600ms var(--ease-i
 .mk .mk-exq li:first-child{border-top:0;padding-top:2px}
 .mk .mk-exq-from{display:block;font:500 12px/18px var(--font-ui);color:var(--muted);margin-top:4px}
 .mk-version{position:fixed;right:10px;bottom:6px;z-index:5;font:500 10px/14px var(--font-ui);letter-spacing:.06em;color:var(--muted);opacity:.65;pointer-events:none;font-variant-numeric:tabular-nums}
-@media (max-width:699.98px){.mk-version{bottom:76px;right:8px}}
+@media (max-width:699.98px){.mk-version{bottom:calc(76px + env(safe-area-inset-bottom,0px));right:8px}}
 #app.is-journal .mk-version{opacity:0}
 .mk-drawer-h .mk-heading{min-width:0}
 .mk-thumbs{display:inline-flex;gap:1px;align-items:center;vertical-align:middle}
