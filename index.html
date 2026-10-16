@@ -1,9 +1,8 @@
-<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
-<title>MONK · demo</title>
-<meta name="description" content="A demo of MONK, a quiet daily practice: the Offering, the Examen, lectio, a prayer list and a journal. Sample content only.">
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}[hidden]{display:none!important}</style><meta name="description" content="MONK, a quiet daily practice: the morning Offering, the evening Examen, lectio, a prayer list, guided prayers and a journal, set as one book. Sample content."></head><body>
+<title>MONK</title>
 
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,300..700,0..100;1,9..144,300..700,0..100&family=Source+Serif+4:ital,opsz,wght@0,8..60,400..700;1,8..60,400..700&family=Hanken+Grotesk:wght@400..700&family=Playwrite+DE+Grund:wght@100..400&display=swap">
-<link rel="stylesheet" href="app/app.css?v=3ccf99ab1327">
+<link rel="stylesheet" href="app/app.css?v=96af26172a41">
 <div class="mk mk-paper" id="app">
   <div class="mk-app" id="stage">
   <div class="mk-shell" id="shell">
@@ -16,9 +15,11 @@
       <section class="mk-place mk-spread" id="p-devotional" hidden></section>
       <section class="mk-place mk-spread mk-rd" id="p-reading" hidden></section>
       <section class="mk-place mk-spread" id="p-prayer" hidden></section>
+      <section class="mk-place mk-spread mk-gp" id="p-guided" hidden></section>
       <section class="mk-place mk-spread mk-jplace" id="p-journal" hidden></section>
       <section class="mk-place mk-spread" id="p-walk" hidden></section>
-            <section class="mk-place mk-col" id="p-study" hidden></section>
+      <!-- Study and Praxis are hidden from the rail, not deleted: both still render here. -->
+      <section class="mk-place mk-col" id="p-study" hidden></section>
       <section class="mk-place mk-col" id="p-praxis" hidden></section>
     </main>
     <nav class="mk-tabbar" id="tabbar" aria-label="Monk"></nav>
@@ -29,7 +30,5 @@
 </div>
 <template id="tpl-devotional"></template>
 <template id="tpl-study-session"></template>
-<script src="app/app.js?v=3ccf99ab1327" charset="utf-8"></script>
-
-<script src="app/tour.js?v=3ccf99ab1327" defer></script>
+<script src="app/app.js?v=96af26172a41" charset="utf-8"></script>
 </body></html>
