@@ -327,7 +327,7 @@
 .mk-nav-s.is-kept{color:var(--kept)}
 .mk-nav.is-groups{display:none}
 .mk-rail-foot{margin-top:auto;display:flex;flex-direction:column;gap:var(--space-2)}
-.mk-tabbar{display:grid;grid-auto-flow:column;grid-auto-columns:1fr;background-color:var(--leaf);background-image:var(--grain);box-shadow:0 -1px 0 var(--rule);padding:6px 6px calc(6px + env(safe-area-inset-bottom,0px))}
+.mk-tabbar{display:grid;grid-auto-flow:column;grid-auto-columns:1fr;background-color:var(--tab-tint,var(--leaf));background-image:var(--grain);box-shadow:0 -1px 0 var(--rule);padding:6px 6px calc(6px + env(safe-area-inset-bottom,0px))}
 .mk-tabbar button{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;min-height:54px;border:0;background:none;font:600 11px/14px var(--font-ui);color:var(--muted);cursor:pointer}
 .mk-tabbar .mk-nav-a{width:44px;height:32px;border-radius:16px 16px 7px 7px;font-size:21px}
 .mk-tabbar button:active .mk-nav-a{transform:translateY(1px) scale(.95)}
@@ -373,7 +373,7 @@
 @container mk (min-width:900px){
   .mk-main.has-spread{padding:var(--space-4);display:flex;flex-direction:column;overflow:hidden}
   .mk-main.has-spread>.mk-top{padding:0 var(--space-3);margin-bottom:var(--space-3);flex:none}
-  .mk-spread{flex:1;min-height:0;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:0;background-color:var(--leaf);background-image:var(--grain);border-radius:var(--radius-lg);
+  .mk-spread{flex:1;min-height:0;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:0;background-color:var(--leaf-tint,var(--leaf));background-image:var(--grain);border-radius:var(--radius-lg);
     box-shadow:var(--shadow-leaf),inset 0 0 0 1px color-mix(in srgb,var(--ink) 7%,transparent);overflow:hidden}
   .mk-verso,.mk-recto{padding:var(--space-6) var(--space-6) var(--space-6);overflow-y:auto;min-height:0;display:flex;flex-direction:column}
   .mk-verso{box-shadow:inset -18px 0 22px -20px color-mix(in srgb,var(--ink) 30%,transparent)}
@@ -842,8 +842,8 @@ html.vt-journal::view-transition-old(mk-journal):only-child{animation:mk-j-out 3
   --ground:#16130F;--leaf:#211B15;--well:#1B1611;--rule:#3A3128;
   --shadow-leaf:0 1px 0 rgba(0,0,0,.35),0 8px 18px -12px rgba(0,0,0,.55);--shadow-inset:inset 0 1px 2px rgba(0,0,0,.35);
   --sun:0;--room-lines:linear-gradient(transparent,transparent);--grain:linear-gradient(transparent,transparent);--gutter:transparent}
-#app.mk-paper{background-image:
-  radial-gradient(120% 90% at var(--light-x) var(--light-y),color-mix(in srgb,var(--room-light,var(--light)) calc(var(--light-a) * var(--bloom) * var(--sun)),transparent) 0%,transparent 62%),
+#app.mk-paper{background-color:var(--room-paper,var(--ground));background-image:
+  var(--room-img,radial-gradient(120% 90% at var(--light-x) var(--light-y),color-mix(in srgb,var(--room-light,var(--light)) calc(var(--light-a) * var(--bloom) * var(--sun)),transparent) 0%,transparent 62%)),
   var(--grain),var(--room-lines)}
 @container mk (min-width:900px){
   .mk-verso{box-shadow:inset -18px 0 22px -20px var(--gutter)}
