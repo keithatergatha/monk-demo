@@ -777,7 +777,7 @@ html.vt-journal::view-transition-new(mk-journal):only-child{animation:mk-j-in 46
 html.vt-journal::view-transition-old(mk-journal):only-child{animation:mk-j-out 320ms cubic-bezier(.5,0,.8,.4) both}
 @keyframes mk-j-in{from{transform:translateX(100%);opacity:.4}to{transform:none;opacity:1}}
 @keyframes mk-j-out{from{transform:none;opacity:1}to{transform:translateX(100%);opacity:.4}}
-.mk-jr textarea.mk-input,.mk-jleaf textarea.mk-input{max-width:none;font-family:var(--font-hand);font-weight:300;font-size:16px}
+.mk-jr textarea.mk-input,.mk-jleaf textarea.mk-input{max-width:none;font-family:var(--font-text);font-weight:400;font-size:17px;line-height:1.6}   
 .mk-jr textarea.mk-input::placeholder,.mk-jleaf textarea.mk-input::placeholder{font-family:var(--font-text);font-weight:400;font-size:18px}
 .mk-jleaf{display:flex;flex-direction:column;gap:var(--space-4)}
 @media (max-width:699.98px){
@@ -996,13 +996,10 @@ html.is-theming,html.is-theming *{transition:background-color 600ms var(--ease-i
 .mk-jfoot{display:none}
 #app.is-jwide .mk-jfoot{display:flex;margin-top:auto;justify-content:flex-end;align-items:center;gap:var(--space-2)}
 .mk-ic-flip svg{transform:scaleX(-1)}
-#app.is-jwide.is-jslim .mk-jr{margin-right:calc(var(--rail-slim) - var(--rail));visibility:visible;padding:var(--space-5) var(--space-3);align-items:center;transition:margin-right 380ms var(--ease-out),visibility 0s}
+#app.is-jwide.is-jslim .mk-jr{width:var(--rail-slim);margin-right:0;visibility:visible;padding:var(--space-5) var(--space-3);align-items:center;transition:width 380ms var(--ease-out),visibility 0s}   
 #app.is-jwide.is-jslim .mk-jr>*{max-width:var(--rail-slim)}
 .mk-jslim{display:flex;flex-direction:column;align-items:center;gap:var(--space-3);height:100%;width:calc(var(--rail-slim) - 2 * var(--space-3))}
 .mk-jslim .mk-jfoot{display:flex;margin-top:auto;justify-content:center}
-#app.is-jwide .mk-version{right:calc(var(--rail) + 12px)}
-#app.is-jwide.is-jslim .mk-version{right:calc(var(--rail-slim) + 12px)}
-#app.is-jwide:not(.is-journal):not(.is-jslim) .mk-version{right:10px}
 @container mk (min-width:1000px){
   #app.is-jside .mk-shell:not(.is-slim){grid-template-columns:var(--rail) minmax(0,1fr)}
   #app.is-jside .mk-shell:not(.is-slim) .mk-rail{align-items:stretch;padding:var(--space-5) var(--space-4)}
@@ -1020,9 +1017,6 @@ html.is-theming,html.is-theming *{transition:background-color 600ms var(--ease-i
 .mk-fb-card .mk-input{min-height:120px;max-width:none;font-size:16px}
 .mk-fb-card p{margin:0}
 @media (max-width:699.98px){.mk-fb{padding:0;align-items:flex-end;justify-content:stretch}.mk-fb-card{width:100%;border-radius:var(--radius-xl) var(--radius-xl) 0 0;padding-bottom:calc(var(--space-5) + env(safe-area-inset-bottom,0px))}}
-.mk-version{position:fixed;right:10px;bottom:6px;z-index:5;font:500 10px/14px var(--font-ui);letter-spacing:.06em;color:var(--muted);opacity:.65;pointer-events:none;font-variant-numeric:tabular-nums}
-@media (max-width:699.98px){.mk-version{bottom:calc(76px + env(safe-area-inset-bottom,0px));right:8px}}
-#app.is-journal .mk-version{opacity:0}
 .mk-drawer-h .mk-heading{min-width:0}
 .mk-thumbs{display:inline-flex;gap:1px;align-items:center;vertical-align:middle}
 .mk-thumbbtn{display:grid;place-items:center;width:22px;height:22px;padding:0;border:0;border-radius:50%;background:none;color:var(--muted);opacity:.75;cursor:pointer;transition:color var(--dur-quick),background-color var(--dur-quick),opacity var(--dur-quick),transform var(--dur-base) var(--spring)}
