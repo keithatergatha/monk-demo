@@ -1002,7 +1002,7 @@ html.is-theming,html.is-theming *{transition:background-color 600ms var(--ease-i
 .mk .mk-exq li:first-child{border-top:0;padding-top:2px}
 .mk .mk-exq-from{display:block;font:500 12px/18px var(--font-ui);color:var(--muted);margin-top:4px}
 #app.is-jwide{--drawer:var(--rail)}
-#app.is-jwide .mk-jr{background:none;box-shadow:inset 1px 0 0 var(--rule);padding:var(--space-5) var(--space-4);gap:var(--space-4);display:flex;flex-direction:column}
+#app.is-jwide .mk-jr{background-color:var(--glass);background-image:linear-gradient(180deg,var(--glass-sheen),transparent 38%);-webkit-backdrop-filter:blur(24px) saturate(1.3);backdrop-filter:blur(24px) saturate(1.3);box-shadow:inset 1px 0 0 var(--glass-line),inset 0 1px 0 var(--glass-edge);padding:var(--space-5) var(--space-4);gap:var(--space-4);display:flex;flex-direction:column}
 #app.is-jwide .mk-jr .mk-drawer-h .mk-heading{font-size:22px}
 #app.is-jwide .mk-jr .mk-input{min-height:220px}
 #app.is-jwide .mk-jr .mk-meta.is-stand{display:none}
