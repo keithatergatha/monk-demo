@@ -1031,7 +1031,6 @@ html.is-theming,html.is-theming *{transition:background-color 600ms var(--ease-i
 .mk-fb-act{align-items:center;gap:var(--space-4)}.mk-fb-act .mk-small{flex:1;min-width:0}
 .mk-fb-recent{display:flex;flex-direction:column;gap:6px;padding-top:var(--space-3);border-top:1px solid var(--glass-line,var(--rule))}
 .mk-fb-row{display:flex;align-items:baseline;gap:10px;margin:0;font-size:14px;line-height:20px}
-.mk-fb-kind{font:600 11px/1 var(--font-ui);letter-spacing:.06em;text-transform:uppercase;color:var(--rubric);flex:none;width:58px}
 .mk-fb-item{flex:1;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .mk-fb-ver{text-align:right}
 .mk-fb-card p{margin:0}
