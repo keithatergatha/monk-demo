@@ -165,6 +165,10 @@
 .mk-link:hover,.mk-prose a:hover{text-decoration-thickness:2px}
 .mk-ic{width:1em;height:1em;stroke:currentColor;fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;flex:none;vertical-align:-.14em}
 .mk-ic .f{fill:currentColor;stroke:none}
+.mk-ic{--ic-d:color-mix(in srgb,var(--ember) 34%,transparent)}
+.mk-ic.is-duo{stroke-width:1.6}
+.mk-ic .d{fill:var(--ic-d);stroke:none}
+[aria-current="page"] .mk-nav-a .mk-ic{--ic-d:color-mix(in srgb,var(--on-ember) 22%,transparent)}
 .mk-stack{display:flex;flex-direction:column;gap:var(--space-4)}
 .mk-row{display:flex;flex-wrap:wrap;gap:var(--space-3);align-items:center}
 .mk-between{display:flex;align-items:center;justify-content:space-between;gap:var(--space-3);flex-wrap:wrap}
@@ -505,7 +509,11 @@ textarea.mk-input{display:block;min-height:180px;max-width:560px;resize:vertical
 .mk-table-row:active .mk-table-a{transform:translateY(1px) scale(.95)}
 .mk-table-b{flex:1;min-width:0}
 .mk-table-s{font:500 13px/20px var(--font-ui);color:var(--muted);font-variant-numeric:tabular-nums}
+.mk-table-a{background:linear-gradient(180deg,color-mix(in srgb,var(--ember-tint) 40%,var(--leaf)),color-mix(in srgb,var(--ember-tint) 78%,var(--leaf)));
+  box-shadow:inset 0 1px 0 var(--glass-edge,rgba(255,255,255,.7)),inset 0 0 0 1px color-mix(in srgb,var(--ember) 16%,transparent)}
 .mk-table-row.is-sealed .mk-table-a{background:var(--kept-tint);color:var(--kept)}
+.mk-table-row.is-sealed .mk-table-a .mk-ic{--ic-d:color-mix(in srgb,var(--kept) 22%,transparent)}
+.mk-table-row.is-next .mk-table-a .mk-ic{--ic-d:color-mix(in srgb,var(--on-ember) 30%,transparent)}
 .mk-table-row.is-sealed .mk-table-s{color:var(--kept);font-weight:600}
 .mk-table-row.is-next .mk-table-a{background-color:var(--ember);background-image:var(--grain);color:var(--on-ember);box-shadow:0 var(--thick) 0 var(--ember-shade)}
 .mk-table-row>.mk-ic{color:var(--muted);font-size:17px;transition:transform var(--dur-base) var(--spring)}
@@ -860,10 +868,9 @@ html.vt-journal::view-transition-old(mk-journal):only-child{animation:mk-j-out 3
   .mk-recto{box-shadow:inset 1px 0 0 var(--glass-line)}
   .mk-spread .mk-foot,.mk-main.is-focus .mk-recto>.mk-foot{background-color:transparent;
     background-image:linear-gradient(to bottom,transparent,color-mix(in srgb,var(--leaf-tint,var(--leaf)) 90%,transparent) 42%)}
-  .mk-rail,.mk-jr{background-color:var(--glass-clear);background-image:linear-gradient(180deg,var(--glass-sheen),transparent 30%);
-    -webkit-backdrop-filter:blur(20px) saturate(1.45);backdrop-filter:blur(20px) saturate(1.45)}
-  .mk-rail{box-shadow:inset -1px 0 0 var(--glass-line),inset 0 1px 0 var(--glass-edge)}
-  .mk-jr{box-shadow:inset 1px 0 0 var(--glass-line),inset 0 1px 0 var(--glass-edge)}
+  .mk-rail,.mk-jr{background:none;-webkit-backdrop-filter:none;backdrop-filter:none}
+  .mk-rail{box-shadow:inset -1px 0 0 var(--glass-line)}
+  .mk-jr{box-shadow:inset 1px 0 0 var(--glass-line)}
 }
 .mk-sunmoon{display:grid;place-items:center;width:1em;height:1em}
 .mk-sunmoon .mk-ic{grid-area:1/1;transition:transform 700ms var(--spring),opacity 320ms var(--ease-out)}
@@ -1000,7 +1007,7 @@ html.is-theming,html.is-theming *{transition:background-color 600ms var(--ease-i
 .mk .mk-exq li:first-child{border-top:0;padding-top:2px}
 .mk .mk-exq-from{display:block;font:500 12px/18px var(--font-ui);color:var(--muted);margin-top:4px}
 #app.is-jwide{--drawer:var(--rail)}
-#app.is-jwide .mk-jr{background-color:var(--glass-clear);background-image:linear-gradient(180deg,var(--glass-sheen),transparent 30%);-webkit-backdrop-filter:blur(20px) saturate(1.45);backdrop-filter:blur(20px) saturate(1.45);box-shadow:inset 1px 0 0 var(--glass-line),inset 0 1px 0 var(--glass-edge);padding:var(--space-5) var(--space-4);gap:var(--space-4);display:flex;flex-direction:column}
+#app.is-jwide .mk-jr{background:none;-webkit-backdrop-filter:none;backdrop-filter:none;box-shadow:inset 1px 0 0 var(--glass-line);padding:var(--space-5) var(--space-4);gap:var(--space-4);display:flex;flex-direction:column}
 #app.is-jwide .mk-jr .mk-drawer-h .mk-heading{font-size:22px}
 #app.is-jwide .mk-jr .mk-input{min-height:220px}
 #app.is-jwide .mk-jr .mk-meta.is-stand{display:none}
