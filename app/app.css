@@ -848,10 +848,10 @@ html.vt-journal::view-transition-old(mk-journal):only-child{animation:mk-j-out 3
 .mk .mk-initial{background:var(--initial-bg);color:var(--initial-fg);box-shadow:inset 0 0 0 1px var(--initial-edge)}
 .mk-verso,.mk-recto{scrollbar-width:thin;scrollbar-color:var(--rule) transparent}
 :root,[data-theme="light"]{--grain:linear-gradient(transparent,transparent);--room-lines:linear-gradient(transparent,transparent);--gutter:transparent;
-  --glass:color-mix(in srgb,var(--leaf-tint,var(--leaf)) 66%,transparent);--glass-edge:rgba(255,255,255,.7);--glass-sheen:rgba(255,255,255,.32);
+  --glass:color-mix(in srgb,var(--leaf-tint,var(--leaf)) 90%,transparent);--glass-clear:rgba(255,255,255,.10);--glass-edge:rgba(255,255,255,.7);--glass-sheen:rgba(255,255,255,.32);
   --glass-line:color-mix(in srgb,var(--ink) 8%,transparent);--glass-drop:rgba(42,33,24,.42);--glass-side:color-mix(in srgb,var(--room-paper,var(--ground)) 42%,transparent)}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--glass:color-mix(in srgb,var(--leaf) 74%,transparent);--glass-edge:rgba(255,240,220,.07);--glass-sheen:rgba(255,240,220,.035);--glass-line:rgba(255,240,220,.06);--glass-drop:rgba(0,0,0,.6);--glass-side:color-mix(in srgb,var(--ground) 55%,transparent)}}
-:root[data-theme="dark"]{--glass:color-mix(in srgb,var(--leaf) 74%,transparent);--glass-edge:rgba(255,240,220,.07);--glass-sheen:rgba(255,240,220,.035);--glass-line:rgba(255,240,220,.06);--glass-drop:rgba(0,0,0,.6);--glass-side:color-mix(in srgb,var(--ground) 55%,transparent)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--glass:color-mix(in srgb,var(--leaf) 90%,transparent);--glass-clear:rgba(255,240,220,.035);--glass-edge:rgba(255,240,220,.07);--glass-sheen:rgba(255,240,220,.035);--glass-line:rgba(255,240,220,.06);--glass-drop:rgba(0,0,0,.6);--glass-side:color-mix(in srgb,var(--ground) 55%,transparent)}}
+:root[data-theme="dark"]{--glass:color-mix(in srgb,var(--leaf) 90%,transparent);--glass-clear:rgba(255,240,220,.035);--glass-edge:rgba(255,240,220,.07);--glass-sheen:rgba(255,240,220,.035);--glass-line:rgba(255,240,220,.06);--glass-drop:rgba(0,0,0,.6);--glass-side:color-mix(in srgb,var(--ground) 55%,transparent)}
 @container mk (min-width:900px){
   .mk-spread{background-color:var(--glass);background-image:linear-gradient(180deg,var(--glass-sheen),transparent 38%);
     -webkit-backdrop-filter:blur(24px) saturate(1.3);backdrop-filter:blur(24px) saturate(1.3);
@@ -860,8 +860,8 @@ html.vt-journal::view-transition-old(mk-journal):only-child{animation:mk-j-out 3
   .mk-recto{box-shadow:inset 1px 0 0 var(--glass-line)}
   .mk-spread .mk-foot,.mk-main.is-focus .mk-recto>.mk-foot{background-color:transparent;
     background-image:linear-gradient(to bottom,transparent,color-mix(in srgb,var(--leaf-tint,var(--leaf)) 90%,transparent) 42%)}
-  .mk-rail,.mk-jr{background-color:var(--glass);background-image:linear-gradient(180deg,var(--glass-sheen),transparent 38%);
-    -webkit-backdrop-filter:blur(24px) saturate(1.3);backdrop-filter:blur(24px) saturate(1.3)}
+  .mk-rail,.mk-jr{background-color:var(--glass-clear);background-image:linear-gradient(180deg,var(--glass-sheen),transparent 30%);
+    -webkit-backdrop-filter:blur(20px) saturate(1.45);backdrop-filter:blur(20px) saturate(1.45)}
   .mk-rail{box-shadow:inset -1px 0 0 var(--glass-line),inset 0 1px 0 var(--glass-edge)}
   .mk-jr{box-shadow:inset 1px 0 0 var(--glass-line),inset 0 1px 0 var(--glass-edge)}
 }
@@ -1000,7 +1000,7 @@ html.is-theming,html.is-theming *{transition:background-color 600ms var(--ease-i
 .mk .mk-exq li:first-child{border-top:0;padding-top:2px}
 .mk .mk-exq-from{display:block;font:500 12px/18px var(--font-ui);color:var(--muted);margin-top:4px}
 #app.is-jwide{--drawer:var(--rail)}
-#app.is-jwide .mk-jr{background-color:var(--glass);background-image:linear-gradient(180deg,var(--glass-sheen),transparent 38%);-webkit-backdrop-filter:blur(24px) saturate(1.3);backdrop-filter:blur(24px) saturate(1.3);box-shadow:inset 1px 0 0 var(--glass-line),inset 0 1px 0 var(--glass-edge);padding:var(--space-5) var(--space-4);gap:var(--space-4);display:flex;flex-direction:column}
+#app.is-jwide .mk-jr{background-color:var(--glass-clear);background-image:linear-gradient(180deg,var(--glass-sheen),transparent 30%);-webkit-backdrop-filter:blur(20px) saturate(1.45);backdrop-filter:blur(20px) saturate(1.45);box-shadow:inset 1px 0 0 var(--glass-line),inset 0 1px 0 var(--glass-edge);padding:var(--space-5) var(--space-4);gap:var(--space-4);display:flex;flex-direction:column}
 #app.is-jwide .mk-jr .mk-drawer-h .mk-heading{font-size:22px}
 #app.is-jwide .mk-jr .mk-input{min-height:220px}
 #app.is-jwide .mk-jr .mk-meta.is-stand{display:none}
