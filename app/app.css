@@ -1041,6 +1041,9 @@ html.is-theming,html.is-theming *{transition:background-color 600ms var(--ease-i
 .mk-fb-row{display:flex;align-items:baseline;gap:10px;margin:0;font-size:14px;line-height:20px}
 .mk-fb-item{flex:1;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .mk-fb-ver{text-align:right}
+.mk-fb-watch{margin-top:10px;padding-top:10px;border-top:1px solid var(--rule,rgba(42,33,24,.14));gap:12px;flex-wrap:wrap}
+.mk-fb-watch label{display:inline-flex;align-items:center;gap:8px;cursor:pointer}
+.mk-fb-watch input{accent-color:var(--ember);width:16px;height:16px}
 .mk-fb-card p{margin:0}
 @media (max-width:699.98px){.mk-fb{padding:0;align-items:flex-end;justify-content:stretch}.mk-fb-card{width:100%;border-radius:var(--radius-xl) var(--radius-xl) 0 0;padding-bottom:calc(var(--space-5) + env(safe-area-inset-bottom,0px))}}
 .mk-drawer-h .mk-heading{min-width:0}
